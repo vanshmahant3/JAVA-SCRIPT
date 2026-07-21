@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Shopping</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#eaf4ff;
+    margin:0;
+}
+
+.container{
+    width:420px;
+    background:white;
+    margin:30px auto;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px gray;
+}
+
+h1{
+    text-align:center;
+    color:#0066cc;
+}
+
+h2{
+    color:#0066cc;
+    border-bottom:2px solid #0066cc;
+    padding-bottom:5px;
+}
+
+input,select{
+    width:95%;
+    padding:10px;
+    margin:8px 0;
+    border:1px solid gray;
+    border-radius:5px;
+    font-size:15px;
+}
+
+button{
+    width:100%;
+    padding:10px;
+    background:#0066cc;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+button:hover{
+    background:#004d99;
+}
+
+.result{
+    background:#f0f8ff;
+    padding:10px;
+    margin-top:10px;
+    border-radius:5px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🛒 Online Shopping</h1>
+
+<!-- Primitive Data Types -->
+<h2>Primitive Data Types</h2>
+
+<div class="result" id="data"></div>
+
+<!-- Type Conversion -->
+<h2>Type Conversion</h2>
+
+<input type="text" id="num" placeholder="Enter a Number">
+
+<button onclick="convert()">Check Type</button>
+
+<div class="result" id="type"></div>
+
+<!-- Shopping Bill -->
+<h2>Shopping Bill</h2>
+
+<input type="number" id="p1" placeholder="Product 1 Price">
+
+<input type="number" id="p2" placeholder="Product 2 Price">
+
+<input type="number" id="qty" placeholder="Quantity">
+
+<select id="payment" onchange="showUPI()">
+    <option value="Cash">Cash</option>
+    <option value="Card">Card</option>
+    <option value="UPI">UPI</option>
+</select>
+
+<div id="upiBox" style="display:none;">
+    <input type="text" id="upi" placeholder="Enter UPI ID">
+</div>
+
+<button onclick="bill()">Calculate Bill</button>
+
+<div class="result" id="total"></div>
+
+</div>
+
+<script>
+
+// Primitive Data Types
+var customer = "Adarsh";     // String
+let amount = 1000;           // Number
+const member = true;         // Boolean
+let address;                 // Undefined
+let discount = null;         // Null
+
+// Display Data Types
+document.getElementById("data").innerHTML =
+"<b>String :</b> " + customer +
+"<br><b>Number :</b> " + amount +
+"<br><b>Boolean :</b> " + member +
+"<br><b>Undefined :</b> " + address +
+"<br><b>Null :</b> " + discount;
+
+// Type Conversion
+function convert(){
+
+    let value = document.getElementById("num").value;
+
+    let number = Number(value);
+
+    document.getElementById("type").innerHTML =
+    "<b>Before Conversion :</b> " + typeof value +
+    "<br><b>After Conversion :</b> " + typeof number;
+
+}
+
+// Show UPI Box
+function showUPI(){
+
+    let payment = document.getElementById("payment").value;
+
+    if(payment=="UPI"){
+        document.getElementById("upiBox").style.display="block";
+    }
+    else{
+        document.getElementById("upiBox").style.display="none";
+    }
+
+}
+
+// Bill Calculation
+function bill(){
+
+    let p1 = Number(document.getElementById("p1").value);
+    let p2 = Number(document.getElementById("p2").value);
+    let qty = Number(document.getElementById("qty").value);
+
+    let payment = document.getElementById("payment").value;
+
+    let subtotal = (p1 + p2) * qty;
+
+    // 10% Discount
+    let discount = subtotal * 0.10;
+
+    let amount = subtotal - discount;
+
+    // UPI Discount
+    let upiDiscount = 0;
+
+    if(payment=="UPI"){
+
+        let upi = document.getElementById("upi").value;
+
+        if(upi==""){
+            alert("Please Enter UPI ID");
+            return;
+        }
+
+        upiDiscount = amount * 0.05;
+        amount = amount - upiDiscount;
+    }
+
+    // GST
+    let gst = amount * 0.18;
+
+    let finalBill = amount + gst;
+
+    document.getElementById("total").innerHTML =
+    "<b>Subtotal :</b> ₹" + subtotal.toFixed(2) +
+    "<br><b>Discount (10%) :</b> ₹" + discount.toFixed(2) +
+    "<br><b>UPI Discount :</b> ₹" + upiDiscount.toFixed(2) +
+    "<br><b>GST (18%) :</b> ₹" + gst.toFixed(2) +
+    "<br><b>Payment :</b> " + payment +
+    "<hr>" +
+    "<h3>Final Bill : ₹" + finalBill.toFixed(2) + "</h3>";
+
+}
+
+</script>
+
+</body>
+</html>
