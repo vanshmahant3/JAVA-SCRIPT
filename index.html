@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shopping - JavaScript Basics</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Main Header -->
+        <header class="main-header">
+            <span class="header-icon">🛒</span> Online Shopping
+        </header>
+        
+        <!-- Section 1: Primitive Data Types -->
+        <h2 class="section-title">Primitive Data Types</h2>
+        <div id="primitiveContainer" class="result-box success-box">
+            <div>String : <span id="stringVal" class="bold-text"></span></div>
+            <div>Number : <span id="numberVal" class="bold-text"></span></div>
+            <div>Boolean : <span id="booleanVal" class="bold-text"></span></div>
+            <div>Undefined : <span id="undefinedVal" class="bold-text"></span></div>
+            <div>Null : <span id="nullVal" class="bold-text"></span></div>
+        </div>
+
+        <!-- Section 2: Type Conversion -->
+        <h2 class="section-title">Type Conversion</h2>
+        <div class="form-container">
+            <input 
+                type="text" 
+                id="typeInput" 
+                class="input-field" 
+                value="88"
+                placeholder="Enter a value..." 
+                autocomplete="off"
+            >
+            <button id="btnCheckType" class="btn-validate">Check Type</button>
+            
+            <div id="typeResultBox" class="result-box success-box" style="display: none;">
+                <div>Before Conversion : <span id="beforeType" class="bold-text"></span></div>
+                <div>After Conversion : <span id="afterType" class="bold-text"></span></div>
+            </div>
+        </div>
+
+        <!-- Section 3: Shopping Bill -->
+        <h2 class="section-title">Shopping Bill</h2>
+        <div class="form-container">
+            <input 
+                type="number" 
+                id="price1Input" 
+                class="input-field" 
+                value="1000"
+                placeholder="Price of Item 1"
+            >
+            <input 
+                type="number" 
+                id="price2Input" 
+                class="input-field" 
+                value="77899"
+                placeholder="Price of Item 2"
+            >
+            <input 
+                type="number" 
+                id="qtyInput" 
+                class="input-field" 
+                value="988"
+                placeholder="Quantity"
+            >
+            <select id="paymentDropdown" class="input-field select-field">
+                <option value="Cash">Cash</option>
+                <option value="Card">Card</option>
+                <option value="UPI">UPI</option>
+            </select>
+            <button id="btnCalculateBill" class="btn-validate">Calculate Bill</button>
+            
+            <div id="billResultBox" class="result-box success-box" style="display: none;">
+                <div>Subtotal : <span id="subtotalOutput" class="bold-text"></span></div>
+                <div>Discount (<span id="discountPercent"></span>) : <span id="discountOutput" class="bold-text"></span></div>
+                <div>Total Payable : <span id="payableOutput" class="bold-text"></span></div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

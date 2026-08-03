@@ -1,0 +1,126 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 460px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+    margin-top: 20px;
+}
+
+/* Main Header matching Online Shopping title */
+.main-header {
+    font-size: 28px;
+    font-weight: bold;
+    color: #0056b3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 25px;
+}
+
+.header-icon {
+    font-size: 26px;
+}
+
+/* Section Title with the blue underline border */
+.section-title {
+    color: #0056b3;
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 2px solid #0056b3;
+    padding-bottom: 8px;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Full-width rounded input field */
+.input-field {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.input-field:focus {
+    border-color: #0056b3;
+}
+
+/* Select dropdown styling */
+.select-field {
+    background-color: #ffffff;
+    cursor: pointer;
+    height: 40px;
+}
+
+/* Full-width blue buttons matching the screenshot check/calculate buttons */
+.btn-validate {
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #0056b3;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-sizing: border-box;
+    text-align: center;
+    transition: background-color 0.2s;
+    margin-bottom: 5px;
+}
+
+.btn-validate:hover {
+    background-color: #004085;
+}
+
+/* Result box using the light blue card styles */
+.result-box {
+    padding: 15px;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 1.6;
+    box-sizing: border-box;
+}
+
+.result-box div {
+    margin-bottom: 6px;
+}
+
+.result-box div:last-child {
+    margin-bottom: 0;
+}
+
+.success-box {
+    background-color: #ebf4fc;
+    color: #333;
+    border: 1px solid #d2e6f7;
+}
+
+.bold-text {
+    font-weight: bold;
+}
