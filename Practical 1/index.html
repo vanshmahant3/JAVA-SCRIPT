@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Registration Portal</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Instant Popup Banner -->
+  <div id="welcomePopup" class="popup-box">
+    <div class="popup-content">
+      <h2>Welcome!</h2>
+      <p>Welcome to the Student Registration Portal.</p>
+      <button onclick="closePopup()">OK</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1>Student Registration Portal</h1>
+
+    <form id="studentForm">
+      <div class="form-field">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required placeholder="Full Name">
+      </div>
+      <div class="form-field">
+        <label for="email">Email:</label>
+        <input type="email" id="email" required placeholder="email@example.com">
+      </div>
+      <div class="form-field">
+        <label for="course">Course:</label>
+        <select id="course" required>
+          <option value="Computer Science">Computer Science</option>
+          <option value="Engineering">Engineering</option>
+          <option value="Business">Business</option>
+          <option value="Arts">Arts</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label for="age">Age:</label>
+        <input type="number" id="age" value="20" required>
+      </div>
+      <div class="button-group">
+        <button type="submit">Fast Register</button>
+        <button type="button" onclick="quickFill()">Quick Fill Sample</button>
+        <button type="reset">Clear</button>
+      </div>
+    </form>
+
+    <hr>
+
+    <h2>Registered Students (<span id="count">0</span>)</h2>
+    <table border="1" cellpadding="6" cellspacing="0">
+      <thead>
+        <tr>
+          <th>ID</th><th>Name</th><th>Email</th>
+          <th>Course</th><th>Age</th><th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
