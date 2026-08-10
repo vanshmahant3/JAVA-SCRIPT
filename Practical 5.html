@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practical 6: Array Finder & Shopping Cart</title>
+  <link rel="stylesheet" href="Practical 5.css">
+</head>
+<body>
+  <div class="app-wrapper">
+   
+    <div class="tab-navigation">
+      <button id="tab-finder" class="tab-btn active">🔢 Array Min/Max Finder</button>
+      <button id="tab-cart" class="tab-btn">🛒 Shopping Cart Calculator</button>
+    </div>
+
+    
+    <div id="finder-container" class="tab-content active">
+      <div class="finder-card">
+        <h1 class="main-title">Array Min & Max Finder</h1>
+
+        
+        <div class="card controls-card">
+          <input type="number" id="number-input" placeholder="Enter a number">
+          <div class="button-group">
+            <button id="add-number-btn" class="btn btn-blue">Add Number</button>
+            <button id="add-random-btn" class="btn btn-teal">Add Random</button>
+            <button id="reset-btn" class="btn btn-red">Reset</button>
+          </div>
+        </div>
+
+       
+        <div class="card array-card">
+          <h2>Current Array</h2>
+          <div id="array-pills-container" class="pills-container">
+            <!-- Badges render here dynamically -->
+          </div>
+        </div>
+
+         <div class="stats-grid">
+          <div class="card stat-card">
+            <h3>MAXIMUM VALUE</h3>
+            <p id="max-val-display">-</p>
+          </div>
+          <div class="card stat-card">
+            <h3>MINIMUM VALUE</h3>
+            <p id="min-val-display">-</p>
+          </div>
+          <div class="card stat-card">
+            <h3>TOTAL ELEMENTS</h3>
+            <p id="total-elements-display">0</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="cart-container" class="tab-content">
+      <div class="cart-card-wrapper">
+        <h1 class="main-title">Shopping  Calculator</h1>
+
+        <!-- Input Form Section -->
+        <div class="input-form">
+          <input type="text" id="product-name" placeholder="Product Name">
+          <input type="number" id="product-price" placeholder="Price" step="0.01">
+          <input type="number" id="product-qty" placeholder="Quantity">
+          <button id="add-product-btn">Add Product</button>
+        </div>
+
+        <!-- Table Section -->
+        <div class="table-responsive">
+          <table id="cart-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Dynamic rows here -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Bill Results Card -->
+        <div class="bill-summary-card">
+          <div class="total-row">
+            Total Amount : <span id="total-amount">₹0.00</span>
+          </div>
+          <div class="discount-row">
+            Discount (<span id="discount-percent">0%</span>) : <span id="discount-amount">-₹0.00</span>
+          </div>
+          <div class="final-row">
+            Final Amount : <span id="final-amount">₹0.00</span>
+          </div>
+        </div>
+
+        <!-- Lists Display Grid -->
+        <div class="lists-container">
+          <div class="summary-section">
+            <h2>Item Summary</h2>
+            <ul id="item-summary-list">
+              <!-- Summary items here -->
+            </ul>
+          </div>
+
+          <div class="summary-section">
+            <h2>Expensive Products (Price > 1000)</h2>
+            <ul id="expensive-products-list">
+              <!-- Expensive items here -->
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="Practical 5.js"></script>
+</body>
+</html>
