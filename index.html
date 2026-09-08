@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Admission Registration Form - Practical 8</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Gym Admission Registration Form</h2>
+        <p class="subtitle">Practical 8: Form Validation &amp; JavaScript Events</p>
+
+        <form id="gymRegistrationForm">
+            <table class="gym-table">
+                <thead>
+                    <tr>
+                        <th class="col-header">Name</th>
+                        <th class="col-header">Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Row 1: Name -->
+                    <tr>
+                        <td class="label-cell">
+                            <label for="fullName">Name</label>
+                        </td>
+                        <td class="input-cell">
+                            <input type="text" id="fullName" name="fullName" placeholder="Enter your full name">
+                            <span id="nameError" class="error-msg"></span>
+                        </td>
+                    </tr>
+
+                    <!-- Row 2: Sex -->
+                    <tr>
+                        <td class="label-cell">
+                            <label>Sex</label>
+                        </td>
+                        <td class="input-cell">
+                            <div class="radio-group">
+                                <label class="option-label">
+                                    <input type="radio" name="sex" value="Male" checked> Male
+                                </label>
+                                <label class="option-label">
+                                    <input type="radio" name="sex" value="Female"> Female
+                                </label>
+                            </div>
+                            <span id="sexError" class="error-msg"></span>
+                        </td>
+                    </tr>
+
+                    <!-- Row 3: Eye Color -->
+                    <tr>
+                        <td class="label-cell">
+                            <label for="eyeColor">Eye color</label>
+                        </td>
+                        <td class="input-cell">
+                            <select id="eyeColor" name="eyeColor">
+                                <option value="green" selected>green</option>
+                                <option value="blue">blue</option>
+                                <option value="brown">brown</option>
+                                <option value="hazel">hazel</option>
+                                <option value="black">black</option>
+                                <option value="gray">gray</option>
+                            </select>
+                            <span id="eyeColorStatus" class="info-msg"></span>
+                        </td>
+                    </tr>
+
+                    <!-- Row 4: Check all that apply -->
+                    <tr>
+                        <td class="label-cell">
+                            <label>Check all that apply</label>
+                        </td>
+                        <td class="input-cell">
+                            <div class="checkbox-group">
+                                <label class="option-label">
+                                    <input type="checkbox" name="attributes" value="Over 6 feet tall"> Over 6 feet tall
+                                </label>
+                                <label class="option-label">
+                                    <input type="checkbox" name="attributes" value="Over 200 pounds"> Over 200 pounds
+                                </label>
+                            </div>
+                            <span id="attrCount" class="info-msg"></span>
+                        </td>
+                    </tr>
+
+                    <!-- Row 5: Describe athletic ability -->
+                    <tr>
+                        <td colspan="2" class="textarea-cell">
+                            <label for="athleticAbility" class="block-label">Describe your athletic ability:</label>
+                            <textarea id="athleticAbility" name="athleticAbility" rows="5" placeholder="Mention your fitness background, sports experience, or athletic goals..."></textarea>
+                            <div class="char-counter">
+                                <span id="charCount">0</span> characters entered
+                            </div>
+                            <span id="abilityError" class="error-msg"></span>
+                        </td>
+                    </tr>
+
+                    <!-- Row 6: Submit Button -->
+                    <tr>
+                        <td colspan="2" class="button-cell">
+                            <button type="submit" id="submitBtn">Enter my information</button>
+                            <button type="reset" id="resetBtn">Reset</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+
+        <!-- Result / Confirmation Display -->
+        <div id="resultCard" class="result-card" style="display: none;">
+            <h3>Registration Submitted Successfully!</h3>
+            <div id="summaryDetails"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
