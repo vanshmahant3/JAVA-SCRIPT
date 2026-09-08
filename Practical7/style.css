@@ -1,0 +1,454 @@
+/* ==========================================================================
+   Practical 11 Stylesheet
+   Modern, Clean, Responsive Design for Form Elements, Validation & Events
+   ========================================================================== */
+
+/* Reset and general setup */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f1f5f9;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #1e293b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 16px;
+}
+
+/* Form Container Card */
+.form-container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+    border: 1px solid #e2e8f0;
+    padding: 36px 40px;
+    width: 100%;
+    max-width: 650px;
+}
+
+/* Header Section */
+.form-header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.badge {
+    display: inline-block;
+    background-color: #e0e7ff;
+    color: #4338ca;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 9999px;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.form-header h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 6px;
+}
+
+.subtitle {
+    font-size: 13.5px;
+    color: #64748b;
+    line-height: 1.5;
+}
+
+/* Success Banner */
+.success-banner {
+    background-color: #ecfdf5;
+    border: 1px solid #10b981;
+    color: #065f46;
+    padding: 14px 18px;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    font-size: 14px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.success-banner.hidden {
+    display: none;
+}
+
+.success-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #10b981;
+    color: #ffffff;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 13px;
+    flex-shrink: 0;
+}
+
+.success-banner p {
+    font-size: 13px;
+    color: #047857;
+    margin-top: 2px;
+}
+
+/* Form Groups & Layout (2-Column Grid) */
+.form-group {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 14px;
+    margin-bottom: 16px;
+    align-items: flex-start;
+}
+
+.label-col {
+    display: flex;
+    align-items: center;
+    min-height: 40px;
+}
+
+.label-col label {
+    font-weight: 600;
+    font-size: 13.5px;
+    color: #334155;
+}
+
+.required {
+    color: #ef4444;
+    margin-left: 2px;
+}
+
+.input-col {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Input Fields & Dropdowns */
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 14px;
+    color: #1e293b;
+    background-color: #ffffff;
+    transition: all 0.2s ease-in-out;
+    outline: none;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="url"]::placeholder,
+input[type="password"]::placeholder {
+    color: #94a3b8;
+}
+
+/* Focus and Active States (Triggered by 'focus' event) */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+select:focus,
+.focused-field {
+    border-color: #3b82f6 !important;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15) !important;
+}
+
+/* Invalid Field Styling (Triggered by validation failure) */
+.error-field {
+    border-color: #ef4444 !important;
+    background-color: #fff1f2;
+}
+
+.error-field:focus {
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15) !important;
+}
+
+/* Valid Field Highlight Styling */
+.valid-field {
+    border-color: #10b981;
+}
+
+/* Error Message Text */
+.error-msg {
+    color: #dc2626;
+    font-size: 12px;
+    margin-top: 4px;
+    min-height: 16px;
+    visibility: hidden;
+    font-weight: 500;
+}
+
+.error-msg.active {
+    visibility: visible;
+}
+
+/* Live Typing Feedback (Triggered by 'input' event) */
+.live-feedback {
+    font-size: 12px;
+    margin-top: 3px;
+    min-height: 15px;
+    font-weight: 500;
+}
+
+/* Radio Buttons Group */
+.radio-group {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    min-height: 40px;
+}
+
+.radio-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: #334155;
+    cursor: pointer;
+}
+
+.radio-label input[type="radio"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #0f172a;
+    cursor: pointer;
+}
+
+/* Password Input Wrapper with Toggle Button */
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.password-wrapper input {
+    padding-right: 44px;
+}
+
+.toggle-password-btn {
+    position: absolute;
+    right: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+    border-radius: 4px;
+    transition: background-color 0.15s ease;
+}
+
+.toggle-password-btn:hover {
+    background-color: #f1f5f9;
+}
+
+/* Birthday Dropdowns Wrapper */
+.birthday-dropdowns {
+    display: flex;
+    gap: 8px;
+}
+
+.birthday-dropdowns select {
+    flex: 1;
+}
+
+.birthday-display-text {
+    font-size: 12.5px;
+    color: #64748b;
+    margin-top: 6px;
+}
+
+.birthday-display-text span {
+    font-weight: 600;
+    color: #0f172a;
+}
+
+/* Checkbox alignment */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    user-select: none;
+    padding: 4px 0;
+}
+
+.checkbox-container input[type="checkbox"] {
+    width: 17px;
+    height: 17px;
+    accent-color: #0f172a;
+    cursor: pointer;
+}
+
+.checkbox-label {
+    font-size: 13.5px;
+    color: #475569;
+}
+
+/* Action Buttons Row */
+.action-row {
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+.buttons-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.btn-primary {
+    background-color: #0f172a;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #334155;
+}
+
+.btn-secondary {
+    background-color: #f8fafc;
+    color: #475569;
+    border-color: #cbd5e1;
+}
+
+.btn-secondary:hover {
+    background-color: #e2e8f0;
+    color: #1e293b;
+}
+
+.btn-tertiary {
+    background-color: #eef2ff;
+    color: #4f46e5;
+    border-color: #c7d2fe;
+}
+
+.btn-tertiary:hover {
+    background-color: #e0e7ff;
+}
+
+/* Summary Card */
+.summary-card {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f8fafc;
+    border: 1px solid #cbd5e1;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.summary-card.hidden {
+    display: none;
+}
+
+.summary-card h3 {
+    font-size: 16px;
+    color: #0f172a;
+    margin-bottom: 4px;
+}
+
+.summary-desc {
+    font-size: 12.5px;
+    color: #64748b;
+    margin-bottom: 14px;
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 10px;
+}
+
+.summary-item {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    padding: 10px 12px;
+    border-radius: 6px;
+}
+
+.summary-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #64748b;
+    font-weight: 600;
+}
+
+.summary-val {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #0f172a;
+    margin-top: 2px;
+    word-break: break-all;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .form-container {
+        padding: 24px 18px;
+    }
+
+    .form-group {
+        grid-template-columns: 1fr;
+        gap: 4px;
+        margin-bottom: 14px;
+    }
+
+    .label-col {
+        min-height: auto;
+        margin-bottom: 2px;
+    }
+
+    .buttons-group {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
