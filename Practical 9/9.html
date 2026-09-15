@@ -1,0 +1,82 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Theme Preferences</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px;
+      background-color: #ffffff;
+      color: #000000;
+    }
+
+    body.dark {
+      background-color: #222222;
+      color: #ffffff;
+    }
+
+    h1 { margin-bottom: 20px; }
+
+    button {
+      padding: 10px 20px;
+      margin: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+
+  </style>
+</head>
+<body>
+
+  <h1>Theme Preferences</h1>
+  <p>Using localStorage and sessionStorage to save user preferences.</p>
+
+  <div>
+    <button onclick="setTheme('light')">Light Theme</button>
+    <button onclick="setTheme('dark')">Dark Theme</button>
+    <button onclick="clearPreference()">Clear Preference</button>
+  </div>
+
+
+
+  <script>
+    // Apply theme and save to both storages
+    function setTheme(theme) {
+      if (theme === 'dark') {
+        document.body.classList.add('dark');
+      } else {
+        document.body.classList.remove('dark');
+      }
+
+      // Save to localStorage (persists even after browser is closed)
+      localStorage.setItem('theme', theme);
+
+      // Save to sessionStorage (clears when tab/browser is closed)
+      sessionStorage.setItem('sessionTheme', theme);
+
+
+    }
+
+    // Clear preference from both storages
+    function clearPreference() {
+      localStorage.removeItem('theme');
+      sessionStorage.removeItem('sessionTheme');
+      document.body.classList.remove('dark');
+
+    }
+
+    // On page load, restore saved theme from localStorage
+    window.onload = function () {
+      var saved = localStorage.getItem('theme');
+      if (saved === 'dark') {
+        document.body.classList.add('dark');
+      }
+
+    };
+  </script>
+
+</body>
+</html>
