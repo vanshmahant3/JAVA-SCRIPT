@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Practical 9: Schedule Planner & Local Storage</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Theme Toggle Bar -->
+  <div class="top-bar">
+    <div class="theme-controls">
+      <span>Theme: </span>
+      <button class="theme-btn" onclick="setTheme('light')">☀️ Light</button>
+      <button class="theme-btn" onclick="setTheme('dark')">🌙 Dark</button>
+      <button class="theme-btn clear-theme-btn" onclick="clearThemePreference()">Reset Theme</button>
+    </div>
+  </div>
+
+  <div class="main-container">
+    <header class="header">
+      <h1>Seminar Schedule Planner</h1>
+      <p class="subtitle">Click on any seminar topic or schedule to show the Alert Box and save preference in Local Storage.</p>
+    </header>
+
+    <!-- Schedule Table Section -->
+    <div class="table-wrapper">
+      <table class="schedule-table" id="scheduleTable">
+        <thead>
+          <tr>
+            <th rowspan="3" class="th-main">Day</th>
+            <th colspan="3" class="th-main">Seminar</th>
+          </tr>
+          <tr>
+            <th colspan="2" class="th-sub">Schedule</th>
+            <th rowspan="2" class="th-sub">Topic</th>
+          </tr>
+          <tr>
+            <th class="th-time">Begin</th>
+            <th class="th-time">End</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Monday -->
+          <tr>
+            <td rowspan="2" class="day-cell">Monday</td>
+            <td rowspan="2" class="time-cell bg-yellow">8:00 a.m.</td>
+            <td rowspan="2" class="time-cell bg-purple">5:00 p.m.</td>
+            <td class="topic-cell" data-day="Monday" data-begin="8:00 a.m." data-end="5:00 p.m." data-topic="Introduction to XML">
+              Introduction to XML
+            </td>
+          </tr>
+          <tr>
+            <td class="topic-cell" data-day="Monday" data-begin="8:00 a.m." data-end="5:00 p.m." data-topic="Validity: DTD and Relax NG">
+              Validity: DTD and Relax NG
+            </td>
+          </tr>
+
+          <!-- Tuesday -->
+          <tr>
+            <td rowspan="3" class="day-cell">Tuesday</td>
+            <td class="time-cell bg-yellow">8:00 a.m.</td>
+            <td class="time-cell bg-yellow">11:00 a.m.</td>
+            <td rowspan="2" class="topic-cell" data-day="Tuesday" data-begin="8:00 a.m. - 2:00 p.m." data-end="2:00 p.m." data-topic="XPath">
+              XPath
+            </td>
+          </tr>
+          <tr>
+            <td class="time-cell bg-green">11:00 a.m.</td>
+            <td class="time-cell bg-green">2:00 p.m.</td>
+          </tr>
+          <tr>
+            <td class="time-cell bg-green">2:00 p.m.</td>
+            <td class="time-cell bg-purple">5:00 p.m.</td>
+            <td class="topic-cell" data-day="Tuesday" data-begin="2:00 p.m." data-end="5:00 p.m." data-topic="XSL Transformations">
+              XSL Transformations
+            </td>
+          </tr>
+
+          <!-- Wednesday -->
+          <tr>
+            <td class="day-cell">Wednesday</td>
+            <td class="time-cell bg-yellow">8:00 a.m.</td>
+            <td class="time-cell bg-green">12:00 p.m.</td>
+            <td class="topic-cell" data-day="Wednesday" data-begin="8:00 a.m." data-end="12:00 p.m." data-topic="XSL Formatting Objects">
+              XSL Formatting Objects
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Local Storage Display Section -->
+    <div class="storage-card">
+      <div class="card-header">
+        <h2>📦 Saved in Local Storage</h2>
+        <span id="storageBadge" class="badge">No Preference Saved</span>
+      </div>
+
+      <div id="savedDetails" class="saved-details empty-state">
+        <p>No seminar selected yet. Click any seminar above to trigger an alert and save it to Local Storage.</p>
+      </div>
+
+      <div class="action-buttons">
+        <button id="clearStorageBtn" class="btn btn-danger" onclick="clearSavedSchedule()">Clear Saved Schedule</button>
+        <button class="btn btn-secondary" onclick="reloadFromStorage()">Reload from Storage</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
