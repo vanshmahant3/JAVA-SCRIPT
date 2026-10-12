@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vansh Mahant — CSE Student · Machine Learning & Data</title>
+  <meta name="description" content="Vansh Mahant, B.Tech Computer Science student at Symbiosis Institute of Technology, Nagpur. Machine learning, NLP and data projects, a published patent application, internships and certifications." />
+  <meta property="og:title" content="Vansh Mahant — CSE Student" />
+  <meta property="og:description" content="Machine learning, NLP and data projects, internships and certifications." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0e0e12" />
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (t) document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="top" tabindex="-1">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="Vansh Mahant — home">
+        <span class="brand-mark" aria-hidden="true">VM</span>
+        <span class="brand-name">Vansh Mahant</span>
+      </a>
+
+      <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+        <ul id="nav-list" class="nav-list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#certifications">Certifications</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn-small btn-primary" id="header-resume" href="#contact">Resume</a>
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch to light theme">
+          <span class="icon-moon" data-icon="moon"></span>
+          <span class="icon-sun" data-icon="sun"></span>
+        </button>
+        <button class="icon-btn nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+          <span data-icon="menu"></span>
+        </button>
+      </div>
+    </div>
+    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+  </header>
+
+  <main id="main">
+    <!-- 1. HOME -->
+    <section id="home" class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">B.Tech CSE · Symbiosis Institute of Technology, Nagpur</p>
+          <h1 id="hero-title" class="hero-title">Vansh <em>Mahant</em></h1>
+          <p class="hero-headline" id="hero-headline"></p>
+          <p class="hero-intro" id="hero-intro"></p>
+
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#projects">View Projects <span data-icon="arrow"></span></a>
+            <a class="btn btn-outline" id="hero-resume" href="#contact"><span data-icon="download"></span> Download Resume</a>
+          </div>
+
+          <ul class="social-row" id="hero-social" aria-label="Profiles and contact"></ul>
+          <ul class="meta-row" id="hero-meta" aria-label="Quick facts"></ul>
+        </div>
+
+        <figure class="hero-photo reveal">
+          <div class="photo-frame"><img id="hero-photo" width="720" height="900" alt="" fetchpriority="high" /></div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 2. ABOUT & EDUCATION -->
+    <section id="about" class="section" aria-labelledby="about-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-no">01</span>
+          <h2 id="about-title">About &amp; education</h2>
+        </header>
+        <div class="about-grid">
+          <div class="reveal">
+            <div class="about-text" id="about-text"></div>
+            <h3 class="mini-title">Interests</h3>
+            <ul class="tag-list" id="about-interests"></ul>
+          </div>
+          <div class="reveal">
+            <h3 class="mini-title first">Education</h3>
+            <ol class="timeline" id="education-list"></ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. SKILLS -->
+    <section id="skills" class="section section-alt" aria-labelledby="skills-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-no">02</span>
+          <h2 id="skills-title">Skills</h2>
+        </header>
+        <div class="skills-grid" id="skills-grid"></div>
+      </div>
+    </section>
+
+    <!-- 4. PROJECTS -->
+    <section id="projects" class="section" aria-labelledby="projects-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-no">03</span>
+          <h2 id="projects-title">Projects</h2>
+          <p class="section-sub">Research and engineering work, with the evidence behind each.</p>
+        </header>
+        <div class="projects-grid" id="projects-grid"></div>
+      </div>
+    </section>
+
+    <!-- 5. EXPERIENCE & ACHIEVEMENTS -->
+    <section id="experience" class="section section-alt" aria-labelledby="experience-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-no">04</span>
+          <h2 id="experience-title">Experience &amp; achievements</h2>
+        </header>
+        <ol class="timeline wide" id="exp-list"></ol>
+      </div>
+    </section>
+
+    <!-- 6. CERTIFICATIONS -->
+    <section id="certifications" class="section" aria-labelledby="certifications-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-no">05</span>
+          <h2 id="certifications-title">Certifications</h2>
+          <p class="section-sub" id="cert-sub"></p>
+        </header>
+
+        <div class="cert-tools reveal">
+          <div class="chips" id="cert-filters" role="group" aria-label="Filter certificates by category"></div>
+          <label class="search">
+            <span class="sr-only">Search certificates</span>
+            <span data-icon="search" aria-hidden="true"></span>
+            <input id="cert-search" type="search" placeholder="Search by title or issuer" autocomplete="off" />
+          </label>
+        </div>
+        <p class="cert-count" id="cert-count" role="status" aria-live="polite"></p>
+        <div class="cert-grid" id="cert-grid"></div>
+        <p class="empty" id="cert-empty" hidden>No certificate matches your search.</p>
+      </div>
+    </section>
+
+    <!-- 7. CONTACT -->
+    <section id="contact" class="section section-alt" aria-labelledby="contact-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-no">06</span>
+          <h2 id="contact-title">Let's connect</h2>
+          <p class="section-sub">I'm looking for internship and placement opportunities in software, data and machine learning. Send me a note below or email me directly.</p>
+        </header>
+
+        <div class="contact-grid">
+          <div class="contact-info reveal">
+            <ul class="contact-list" id="contact-list"></ul>
+          </div>
+
+          <form class="contact-form reveal" id="contact-form" novalidate aria-describedby="form-help">
+            <p id="form-help" class="muted">Submitting opens your email app with this message ready to send. Nothing is stored on this website.</p>
+            <div class="field">
+              <label for="cf-name">Your name</label>
+              <input id="cf-name" name="name" type="text" autocomplete="name" required aria-describedby="cf-name-err" />
+              <p class="field-error" id="cf-name-err" role="alert"></p>
+            </div>
+            <div class="field">
+              <label for="cf-email">Your email</label>
+              <input id="cf-email" name="email" type="email" autocomplete="email" required aria-describedby="cf-email-err" />
+              <p class="field-error" id="cf-email-err" role="alert"></p>
+            </div>
+            <div class="field">
+              <label for="cf-message">Message</label>
+              <textarea id="cf-message" name="message" rows="5" required aria-describedby="cf-message-err"></textarea>
+              <p class="field-error" id="cf-message-err" role="alert"></p>
+            </div>
+            <div class="form-row">
+              <button class="btn btn-primary" type="submit">Open email draft <span data-icon="mail"></span></button>
+              <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-name">Vansh Mahant</p>
+        <p class="muted">B.Tech CSE · Symbiosis Institute of Technology, Nagpur</p>
+      </div>
+      <ul class="social-row" id="footer-social" aria-label="Profiles and contact"></ul>
+      <p class="muted copyright">© <span id="year"></span> Vansh Mahant. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <button class="to-top" id="to-top" type="button" aria-label="Back to top" hidden><span data-icon="up"></span></button>
+
+  <dialog id="lightbox" class="lightbox" aria-labelledby="lb-title">
+    <div class="lb-bar">
+      <p class="lb-counter" id="lb-counter"></p>
+      <div class="lb-actions">
+        <a class="btn btn-small btn-outline" id="lb-original" target="_blank" rel="noopener">Open original <span data-icon="external"></span></a>
+        <button class="icon-btn" id="lb-close" type="button" aria-label="Close preview"><span data-icon="close"></span></button>
+      </div>
+    </div>
+    <div class="lb-stage">
+      <button class="icon-btn lb-nav lb-prev" id="lb-prev" type="button" aria-label="Previous"><span data-icon="left"></span></button>
+      <img id="lb-img" alt="" />
+      <button class="icon-btn lb-nav lb-next" id="lb-next" type="button" aria-label="Next"><span data-icon="right"></span></button>
+    </div>
+    <div class="lb-caption">
+      <p class="lb-title" id="lb-title"></p>
+      <p class="lb-meta" id="lb-meta"></p>
+      <p class="lb-detail" id="lb-detail"></p>
+      <a class="lb-verify" id="lb-verify" target="_blank" rel="noopener" hidden>Verify online <span data-icon="external"></span></a>
+    </div>
+  </dialog>
+
+  <script src="js/data/profile.js"></script>
+  <script src="js/data/certificates.js"></script>
+  <script src="js/data/content.js"></script>
+  <script src="js/icons.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/certificates.js"></script>
+  <script src="js/lightbox.js"></script>
+  <script src="js/contact.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
