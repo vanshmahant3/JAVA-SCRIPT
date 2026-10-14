@@ -1,0 +1,25 @@
+* { box-sizing: border-box; }
+body { font-family: "Segoe UI", Arial, sans-serif; background: #f4f6fa; color: #2d3748; margin: 0; padding: 0 0 30px; }
+.header { max-width: 1400px; margin: 0 auto 28px; background: #fff; padding: 24px; text-align: center; border-radius: 0 0 10px 10px; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+.header h1 { margin: 0 0 8px; font-size: 26px; }
+.header p { margin: 0; color: #4a5568; }
+.layout { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 430px 1fr; gap: 28px; align-items: start; padding: 0 0; }
+.card { background: #fff; border-radius: 10px; padding: 28px; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+.card h2 { margin: 0 0 20px; font-size: 22px; border-bottom: 2px solid #edf2f7; padding-bottom: 14px; }
+label { display: block; font-weight: 600; margin: 14px 0 8px; }
+input, select { width: 100%; padding: 12px; border: 1px solid #cbd5e0; border-radius: 6px; font-size: 16px; }
+button { width: 100%; padding: 14px; margin-top: 10px; border: 0; border-radius: 6px; color: #fff; font-size: 16px; font-weight: 600; cursor: pointer; }
+.btn-add { background: #3b69b0; } .btn-load { background: #3f7d58; } .btn-clear { background: #718096; }
+button:hover { opacity: .9; }
+.json-box { background: #1a202c; color: #e2e8f0; border-radius: 8px; padding: 18px; margin-top: 22px; }
+.json-box h3 { margin: 0 0 10px; font-size: 15px; color: #a0aec0; text-transform: uppercase; }
+.json-box pre { margin: 0; white-space: pre-wrap; font-family: Consolas, monospace; font-size: 14px; max-height: 260px; overflow: auto; }
+.table-head { display: flex; justify-content: space-between; align-items: center; }
+.badge-total { background: #ebf4ff; color: #2b6cb0; border: 1px solid #bee3f8; border-radius: 20px; padding: 6px 14px; font-weight: 600; font-size: 15px; }
+table { width: 100%; border-collapse: collapse; }
+th { background: #f7fafc; text-align: left; padding: 14px 10px; }
+td { padding: 14px 10px; border-bottom: 1px solid #edf2f7; }
+.dept { background: #edf2f7; border-radius: 4px; padding: 5px 10px; font-size: 15px; }
+tfoot td { background: #f7fafc; font-weight: 700; text-align: right; }
+.err { color: #e53e3e; font-size: 14px; margin-top: 6px; }
+@media (max-width: 900px) { .layout { grid-template-columns: 1fr; } }

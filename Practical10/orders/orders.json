@@ -1,0 +1,7 @@
+[
+  { "orderId": "ORD101", "customerName": "Aarav Sharma", "foodItem": "Paneer Butter Masala & Naan", "quantity": 2, "totalAmount": 480, "orderStatus": "Delivered" },
+  { "orderId": "ORD102", "customerName": "Priya Patel", "foodItem": "Veg Hakka Noodles", "quantity": 1, "totalAmount": 320, "orderStatus": "Ready" },
+  { "orderId": "ORD103", "customerName": "Rohan Gupta", "foodItem": "Biryani", "quantity": 2, "totalAmount": 650, "orderStatus": "Preparing" },
+  { "orderId": "ORD104", "customerName": "Sneha Reddy", "foodItem": "Margherita Pizza", "quantity": 1, "totalAmount": 399, "orderStatus": "Delivered" },
+  { "orderId": "ORD105", "customerName": "Vikram Singh", "foodItem": "Masala Dosa & Coffee", "quantity": 3, "totalAmount": 360, "orderStatus": "Preparing" }
+]

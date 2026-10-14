@@ -1,0 +1,7 @@
+[
+  { "id": "EMP101", "name": "Aarav Sharma", "department": "Engineering", "salary": 75000 },
+  { "id": "EMP102", "name": "Priya Patel", "department": "Human Resources", "salary": 62000 },
+  { "id": "EMP103", "name": "Rohan Mehta", "department": "Finance", "salary": 68000 },
+  { "id": "EMP104", "name": "Sneha Gupta", "department": "Marketing", "salary": 58000 },
+  { "id": "EMP105", "name": "Kavita Singhania", "department": "Marketing", "salary": 85000 }
+]

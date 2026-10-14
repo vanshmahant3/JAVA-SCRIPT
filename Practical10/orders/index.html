@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Order Management - Practical 10</title>
+    <!-- Simple External CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- 1. Use jQuery library through CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Restaurant Online Food Orders</h2>
+        <p class="desc">Case Study: Dynamic Order Loading using jQuery &amp; JSON</p>
+
+        <!-- View Orders Action Button -->
+        <div class="btn-container">
+            <button id="viewOrdersBtn">View Orders</button>
+        </div>
+
+        <!-- 8. Error message display area -->
+        <div id="errorMessage" class="error-message"></div>
+
+        <!-- 3. Dynamic Orders HTML Table -->
+        <table id="ordersTable">
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Customer Name</th>
+                    <th>Food Item</th>
+                    <th>Quantity</th>
+                    <th>Total Amount</th>
+                    <th>Order Status</th>
+                </tr>
+            </thead>
+            <tbody id="ordersTableBody">
+                <tr>
+                    <td colspan="6" style="color: #777;">Click "View Orders" above to load all orders dynamically.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 6 & 7. Summary of Total Orders and Total Sales Amount -->
+        <div class="summary-box">
+            <div>Total Orders: <span id="totalOrdersCount">0</span></div>
+            <div>Total Sales Amount: <span id="totalSalesAmount">₹0</span></div>
+        </div>
+    </div>
+
+    <!-- Main Logic Script -->
+    <script src="script.js"></script>
+</body>
+</html>

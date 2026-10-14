@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Management - Practical 10b</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="header">
+    <h1>Employee Management System</h1>
+    <p>Practical 10b: Manage Employee Information using JavaScript &amp; JSON</p>
+  </div>
+
+  <div class="layout">
+    <!-- Left: form + JSON output -->
+    <div class="card">
+      <h2>Add New Employee</h2>
+      <form id="empForm">
+        <label for="empId">Employee ID:</label>
+        <input type="text" id="empId" placeholder="e.g., EMP105">
+
+        <label for="empName">Employee Name:</label>
+        <input type="text" id="empName" placeholder="e.g., John Doe">
+
+        <label for="empDept">Department:</label>
+        <select id="empDept">
+          <option value="">-- Select Department --</option>
+          <option>Engineering</option>
+          <option>Human Resources</option>
+          <option>Finance</option>
+          <option>Marketing</option>
+        </select>
+
+        <label for="empSalary">Salary (₹ / $):</label>
+        <input type="number" id="empSalary" placeholder="e.g., 65000">
+        <div id="error" class="err"></div>
+
+        <button type="submit" class="btn-add">Add Employee (Save to JSON)</button>
+        <button type="button" id="loadBtn" class="btn-load">Load Employees (fetch JSON)</button>
+        <button type="button" id="clearBtn" class="btn-clear">Clear Table View</button>
+      </form>
+
+      <div class="json-box">
+        <h3>Converted JSON (JSON.stringify)</h3>
+        <pre id="jsonOutput">// Click "Load Employees" or add an employee.</pre>
+      </div>
+    </div>
+
+    <!-- Right: records table -->
+    <div class="card">
+      <div class="table-head">
+        <h2 style="border:0;margin:0;padding:0">Employee Records Table</h2>
+        <span class="badge-total" id="totalBadge">Total: 0 Employees</span>
+      </div>
+      <table>
+        <thead>
+          <tr><th>#</th><th>Emp ID</th><th>Name</th><th>Department</th><th>Salary</th></tr>
+        </thead>
+        <tbody id="empBody"></tbody>
+        <tfoot>
+          <tr><td colspan="4">Total Salary:</td><td style="text-align:left" id="totalSalary">₹0</td></tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

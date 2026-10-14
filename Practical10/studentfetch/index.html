@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Student Details</title>
+
+        <style>
+            table {
+                border-collapse: collapse;
+                width: 70%;
+                margin-top: 20px;
+            }
+
+            th, td {
+                border: 1px solid black;
+                padding: 10px;
+            }
+
+            th {
+                background-color: lightgray;
+                text-align: left;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h2>Student Details using fetch()</h2>
+        <button id="loadBtn">Load Students</button>
+
+        <table id="studentTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Marks</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+        </table>
+
+        <script>
+            document.getElementById("loadBtn").addEventListener("click", function () {
+                // Use fetch() to read students.json
+                fetch("students.json")
+                    .then(function (response) {
+                        if (!response.ok) {
+                            throw new Error("HTTP error " + response.status);
+                        }
+                        return response.json();
+                    })
+                    .then(function (data) {
+                        const tbody = document.getElementById("tableBody");
+                        tbody.innerHTML = "";   // avoid duplicate rows on repeated clicks
+
+                        data.forEach(function (student) {
+                            tbody.innerHTML += `
+                                <tr>
+                                    <td>${student.id}</td>
+                                    <td>${student.name}</td>
+                                    <td>${student.department}</td>
+                                    <td>${student.marks}</td>
+                                </tr>`;
+                        });
+                    })
+                    .catch(function (error) {
+                        console.error(error);
+                        alert("Error loading JSON data");
+                    });
+            });
+        </script>
+    </body>
+</html>
