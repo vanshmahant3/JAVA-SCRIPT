@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library Book Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+  <main class="app">
+    <header>
+      <h1>Library Book Tracker</h1>
+      <p>DOM manipulation, events, Web Storage and jQuery AJAX</p>
+    </header>
+
+    <!-- Status bar -->
+    <section class="status">
+      <div>AJAX status: <b id="ajaxStatus">Not requested</b></div>
+      <div>Last request: <b id="ajaxTime">-</b></div>
+      <div>Saved in: <b>localStorage</b> (books) &amp; <b>sessionStorage</b> (search)</div>
+    </section>
+    <div id="msg" class="msg" role="status"></div>
+
+    <!-- Add book form -->
+    <section class="card">
+      <h2>Add a Book</h2>
+      <form id="bookForm" novalidate>
+        <div class="fields">
+          <div><label for="title">Title</label><input id="title" type="text" placeholder="Book title"></div>
+          <div><label for="author">Author</label><input id="author" type="text" placeholder="Author name"></div>
+          <div><label for="genre">Genre</label>
+            <select id="genre">
+              <option>Programming</option><option>Self-Help</option><option>Biography</option>
+              <option>Fiction</option><option>Science</option>
+            </select></div>
+          <div><label for="year">Year</label><input id="year" type="number" placeholder="e.g. 2021"></div>
+        </div>
+        <div class="err" id="formErr"></div>
+        <div class="buttons">
+          <button type="submit">Add Book</button>
+          <button type="button" id="loadBtn" class="green">Load from Server (AJAX)</button>
+          <button type="button" id="badBtn" class="amber">Test AJAX Error</button>
+          <button type="button" id="clearBtn" class="red">Clear All</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Search + filter -->
+    <section class="card">
+      <div class="tools">
+        <input id="search" type="search" placeholder="Search by title or author...">
+        <select id="filterGenre"><option value="All">All genres</option></select>
+        <select id="filterRead">
+          <option value="all">All books</option>
+          <option value="read">Read</option>
+          <option value="unread">Unread</option>
+        </select>
+      </div>
+
+      <table>
+        <thead>
+          <tr><th>ID</th><th>Title</th><th>Author</th><th>Genre</th><th>Year</th><th>Status</th><th>Actions</th></tr>
+        </thead>
+        <tbody id="bookBody"></tbody>
+      </table>
+
+      <div class="stats">
+        <span>Total: <b id="sTotal">0</b></span>
+        <span>Read: <b id="sRead">0</b></span>
+        <span>Unread: <b id="sUnread">0</b></span>
+        <span>Progress: <b id="sPct">0%</b></span>
+      </div>
+    </section>
+
+    <footer>Vansh Mahant | PRN: 24070521038 | Section A | Batch A1</footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
